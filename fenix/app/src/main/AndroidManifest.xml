@@ -60,7 +60,11 @@
         android:theme="@style/NormalTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
+        <uses-library android:name="libOpenCL.so"
+            android:required="false"/>
 
+        <uses-library android:name="libOpenCL-pixel.so"
+            android:required="false"/>
         <profileable
             android:shell="true"
             tools:targetApi="29" />

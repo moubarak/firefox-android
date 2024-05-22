@@ -410,6 +410,14 @@ abstract class BaseBrowserFragment :
                     ),
                 )
             },
+            onPageContentSummarizerClicked = {
+                findNavController().nav(
+                    R.id.browserFragment,
+                    BrowserFragmentDirections.actionGlobalAiSummarizerFragment(
+                        url = context.components.core.store.state.selectedTab?.content?.url
+                    ),
+                )
+            },
             onCloseTab = { closedSession ->
                 val closedTab = store.state.findTab(closedSession.id) ?: return@DefaultBrowserToolbarController
                 showUndoSnackbar(requireContext().tabClosedUndoMessage(closedTab.content.private))
