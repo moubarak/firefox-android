@@ -19,6 +19,7 @@ interface BrowserToolbarInteractor {
     fun onBrowserToolbarClicked()
     fun onBrowserToolbarMenuItemTapped(item: ToolbarMenu.Item)
     fun onTabCounterClicked()
+    fun onPageContentSummarizerClicked()
     fun onTabCounterMenuItemTapped(item: TabCounterMenu.Item)
     fun onScrolled(offset: Int)
     fun onReaderModePressed(enabled: Boolean)
@@ -70,6 +71,10 @@ class DefaultBrowserToolbarInteractor(
 
     override fun onTabCounterClicked() {
         browserToolbarController.handleTabCounterClick()
+    }
+
+    override fun onPageContentSummarizerClicked() {
+        browserToolbarController.handlePageContentSummarizerClick()
     }
 
     override fun onTabCounterMenuItemTapped(item: TabCounterMenu.Item) {

@@ -45,6 +45,7 @@ interface BrowserToolbarController {
     fun handleToolbarPasteAndGo(text: String)
     fun handleToolbarClick()
     fun handleTabCounterClick()
+    fun handlePageContentSummarizerClick()
     fun handleTabCounterItemInteraction(item: TabCounterMenu.Item)
     fun handleReaderModePressed(enabled: Boolean)
 
@@ -93,6 +94,7 @@ class DefaultBrowserToolbarController(
     private val customTabSessionId: String?,
     private val browserAnimator: BrowserAnimator,
     private val onTabCounterClicked: () -> Unit,
+    private val onPageContentSummarizerClicked: () -> Unit,
     private val onCloseTab: (SessionState) -> Unit,
 ) : BrowserToolbarController {
 
@@ -154,6 +156,10 @@ class DefaultBrowserToolbarController(
 
     override fun handleTabCounterClick() {
         onTabCounterClicked.invoke()
+    }
+
+    override fun handlePageContentSummarizerClick() {
+        onPageContentSummarizerClicked.invoke()
     }
 
     override fun handleReaderModePressed(enabled: Boolean) {

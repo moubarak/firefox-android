@@ -97,6 +97,7 @@ import org.mozilla.fenix.Config
 import org.mozilla.fenix.IntentReceiverActivity
 import org.mozilla.fenix.R
 import org.mozilla.fenix.components.search.SearchMigration
+import org.mozilla.fenix.components.toolbar.InferenceModel
 import org.mozilla.fenix.downloads.DownloadService
 import org.mozilla.fenix.ext.components
 import org.mozilla.fenix.ext.settings
@@ -177,6 +178,11 @@ class Core(
             }
         }
     }
+
+    /**
+     * As early as possible (called by Application subclass)
+     */
+    val inferenceModel = InferenceModel.getInstance(context)
 
     /**
      * Passed to [engine] to intercept requests for app links,

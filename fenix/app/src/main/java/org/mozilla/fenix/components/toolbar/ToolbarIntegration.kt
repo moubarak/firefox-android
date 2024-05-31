@@ -144,6 +144,13 @@ class DefaultToolbarIntegration(
                 showMaskInPrivateMode = context.settings().feltPrivateBrowsingEnabled,
             )
 
+            val summarizeAction = PageContentSummarizerToolbarButton(
+                summarizePage = {
+                    toolbar.hideKeyboard()
+                    interactor.onPageContentSummarizerClicked()
+                }
+            )
+
             val tabCount = if (isPrivate) {
                 store.state.privateTabs.size
             } else {
@@ -153,6 +160,7 @@ class DefaultToolbarIntegration(
             tabsAction.updateCount(tabCount)
 
             toolbar.addBrowserAction(tabsAction)
+            toolbar.addBrowserAction(summarizeAction)
         }
     }
 

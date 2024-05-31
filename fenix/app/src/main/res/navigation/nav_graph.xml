@@ -149,6 +149,11 @@
         app:popUpTo="@id/tabsTrayFragment"
         app:popUpToInclusive="true" />
     <action
+        android:id="@+id/action_global_aiSummarizerFragment"
+        app:destination="@id/AISummarizerFragment"
+        app:popUpTo="@id/AISummarizerFragment"
+        app:popUpToInclusive="true" />
+    <action
         android:id="@+id/action_global_savedLoginsAuthFragment"
         app:destination="@id/savedLoginsAuthFragment" />
     <action
@@ -175,6 +180,14 @@
             android:name="accessPoint"
             android:defaultValue="None"
             app:argType="org.mozilla.fenix.tabstray.TabsTrayAccessPoint" />
+    </dialog>
+    <dialog
+        android:id="@+id/AISummarizerFragment"
+        android:name="org.mozilla.fenix.components.toolbar.AISummarizerFragment">
+        <argument
+            android:name="url"
+            app:nullable="true"
+            app:argType="string" />
     </dialog>
 
     <fragment

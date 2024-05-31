@@ -32,7 +32,7 @@ android {
 
     defaultConfig {
         applicationId "org.mozilla"
-        minSdkVersion config.minSdkVersion
+        minSdk 24
         compileSdk config.compileSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode 1
@@ -671,6 +671,8 @@ dependencies {
     implementation FenixDependencies.google_play_review_ktx
 
     implementation FenixDependencies.androidx_profileinstaller
+
+    implementation ("com.google.mediapipe:tasks-genai:0.10.14")
 
     androidTestImplementation ComponentsDependencies.androidx_test_uiautomator
     androidTestImplementation FenixDependencies.fastlane
